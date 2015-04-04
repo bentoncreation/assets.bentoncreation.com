@@ -1,0 +1,109 @@
+{block:SearchPage}
+  <div class="post search">
+    <span class="permalink">Search</span>
+    {block:SearchResults}
+      {SearchResultCount} results for {SearchQuery}.
+    {/block:SearchResults}
+  </div>
+{/block:SearchPage}
+
+{block:Posts}
+  <div class="post {PostType}">
+    {block:Link}
+      <h1><a href="{URL}">{Name}</a></h1>
+      {block:Description}
+        {Description}
+      {/block:Description}
+    {/block:Link}
+
+    {block:Answer}
+      <div class="question">
+        {Asker} asked: {Question}
+      </div>
+      {Answer}
+    {/block:Answer}
+
+    {block:Chat}
+      {block:Title}
+        <h1><a href="{Permalink}">{Title}</a></h1>
+      {/block:Title}
+      <ol>
+        {block:Lines}
+          <li>
+            {block:Label}
+              <span class="label">{Label}</span>
+            {/block:Label}
+            {Line}
+          </li>
+        {/block:Lines}
+      </ol>
+    {/block:Chat}
+
+    {block:Video}
+      {Video-500}
+      {block:Caption}
+        {Caption}
+      {/block:Caption}
+    {/block:Video}
+
+    {block:Audio}
+      {block:IfShowAlbumArtOnAudioPosts}
+        {block:AlbumArt}
+          <img src="{AlbumArtURL}" alt="{block:Artist}{Artist}{/block:Artist}{block:TrackName} - {TrackName}{/block:TrackName}" class="album-art" />
+        {/block:AlbumArt}
+      {/block:IfShowAlbumArtOnAudioPosts}
+      {AudioPlayerBlack}
+      {block:Caption}
+        {Caption}
+      {/block:Caption}
+    {/block:Audio}
+
+    {block:Photo}
+      {LinkOpenTag}
+        <img src="{PhotoUrl-500}" alt="{PhotoAlt}"/>
+      {LinkCloseTag}
+      {block:Caption}
+        {Caption}
+      {/block:Caption}
+    {/block:Photo}
+
+    {block:Quote}
+      <blockquote class="thequote">
+        {Quote}
+      </blockquote>
+      {block:Source}
+        {Source}
+      {/block:Source}
+    {/block:Quote}
+
+    {block:Text}
+      {block:Title}
+        <h1><a href="{Permalink}">{Title}</a></h1>
+      {/block:Title}
+      {Body}
+    {/block:Text}
+
+    {block:Date}
+      <p class="meta">
+        Posted <a href="{Permalink}">{Month} {DayOfMonth}, {Year} at {12Hour}:{Minutes} {CapitalAmPm}</a><br />
+      </p>
+    {/block:Date}
+  </div>
+{/block:Posts}
+
+{block:IndexPage}
+  {block:Pagination}
+    <div class="navigation">
+      {block:NextPage}
+        <div class="left">
+          <a href="{NextPage}">&laquo; Previous</a>
+        </div>
+      {/block:NextPage}
+      {block:PreviousPage}
+        <div class="right">
+          <a href="{PreviousPage}">Next &raquo;</a>
+        </div>
+      {/block:PreviousPage}
+    </div>
+  {/block:Pagination}
+{/block:IndexPage}
