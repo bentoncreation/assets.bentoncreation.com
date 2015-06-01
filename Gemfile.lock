@@ -127,3 +127,6 @@ DEPENDENCIES
   middleman-livereload (~> 3.1.0)
   middleman-settings
   tumblargh
+
+BUNDLED WITH
+   1.10.2
