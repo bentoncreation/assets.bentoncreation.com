@@ -64,9 +64,6 @@ header[role="banner"] {
 }
 
 #location {
-  background: image-url("nc.png") no-repeat 100% 50%;
-  @include image-2x(image-path("nc2x.png"), 30px, 12px);
-  padding:0 40px 0 0;
   color:#fff;
   float:right;
   font-size:0.75em; /* 12/14 */
